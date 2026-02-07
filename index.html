@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CV</title>
+  <link rel="stylesheet" href="Assets/styles.css" />
+  <script src="Assets/devicons.js"></script>
+  <script src="Assets/icons.js"></script>
+  <script src="Scripts/layout.js" defer></script>
+  <script src="Scripts/ui.js" defer></script>
+  <script src="Scripts/drag.js" defer></script>
+  <script src="Scripts/transitions.js" defer></script>
+  <style>
+    @page {
+      size: auto;
+      margin: 0;
+      size: 1440px 2000px;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar">
+    <button class="theme-toggle" aria-label="Toggle color scheme">
+      <span class="theme-toggle-icon">◐</span>
+    </button>
+    <a href="#education" class="nav-link">Formación</a>
+    <a href="#practices" class="nav-link">Prácticas</a>
+    <a href="#languages" class="nav-link">Idiomas</a>
+    <a href="#others" class="nav-link">Contacto</a>
+  </nav>
+
+  <div class="viewport">
+    <div class="stage">
+      <div class="logo-box">
+        <div class="avatar" aria-label="Profile picture">
+          <img src="pfp.jpg" alt="Profile" />
+        </div>
+      </div>
+      <div class="btn big"></div>
+      <div class="btn small"></div>
+      <div class="panel"></div>
+      <div class="container">
+        <aside class="left">
+          <div class="left-sections">
+            <section id="about-me" class="left-section">
+              <h2 data-vt="idiomas">Sobre mi</h2>
+              <p>
+                Soy Hernán, tengo 21 años y me considero bastante entusiasta colaborador y creativo.
+                Disfruto trabajando en equipo y deseo continuar aprendiendo sobre los temas que más despiertan mi
+                curiosidad como la IA, seguridad informática, accesibilidad del software a usuarios con capacidades
+                especiales y programación en general.
+              </p>
+            </section>
+            <section id="contact" class="left-section">
+              <h2>Contacto</h2>
+              <div class="contact-info">
+                <p id="phone-item">
+                  <span id="phone-icon"></span>
+                  +34 644 03 23 30
+                </p>
+                <a href="mailto:emailaddress@gmail.com" id="email-link"><span id="email-icon"></span>
+                  hernan@gmail.com</a>
+                <p id="location-item">
+                  <span id="location-icon"></span>
+                  Sevilla, España
+                </p>
+              </div>
+            </section>
+
+            <section id="linkedin" class="left-section">
+              <h2>LinkedIn</h2>
+              <div class="contact-info">
+                <a href="https://linkedin.com/in/hernanadaits"><span class="icon">in</span>
+                  linkedin.com/in/hernanadaits</a>
+              </div>
+            </section>
+          </div>
+        </aside>
+
+        <div class="btn-text big">
+          <div class="btn-text-inner">
+            <div class="btn-title">Título</div>
+            <div class="btn-subtitle">One-liner value proposition</div>
+          </div>
+        </div>
+
+        <div class="btn-text small">
+          <div class="btn-text-inner">
+            <div class="btn-subtitle-sm">36%</div>
+          </div>
+        </div>
+
+        <main class="right">
+          <h1 class="clickable-name">NAME</h1>
+
+          <section id="education">
+            <div class="edu-langs">
+              <p class="edu-langs-label">Programming languages</p>
+              <div class="edu-langs-icons">
+                <i class="lang-icon devicon-c-original"></i>
+                <i class="lang-icon devicon-javascript-plain"></i>
+              </div>
+            </div>
+            <h2>Formación</h2>
+            <p>Academic title</p>
+            <div class="meta">Institution · Year · City</div>
+            <p>Academic title</p>
+            <div class="meta">Institution · Year · City</div>
+          </section>
+
+          <div class="section-sep">
+            <div class="section-sep-bar">Prácticas</div>
+          </div>
+
+          <section id="practices">
+            <h2>Prácticas</h2>
+
+            <div class="subtitle-group">
+              <p>SUBTITLE</p>
+              <p><strong>Skills acquired</strong></p>
+            </div>
+
+            <div class="subtitle-group" id="subtitle4">
+              <h3>SUBTITLE 4</h3>
+              <ul class="skill-list">
+                <li>Skill 1</li>
+                <li>Skill</li>
+                <li>Skill</li>
+                <li>Skill</li>
+                <li>Skill</li>
+                <li>Skill</li>
+                <li>Skill</li>
+                <li>Skill</li>
+                <li>Skill</li>
+              </ul>
+            </div>
+
+            <div class="subtitle-group" id="subtitle3">
+              <h3>SUBTITLE 3</h3>
+              <p>Short description of what you did and what you achieved.</p>
+            </div>
+
+            <div class="subtitle-group" id="subtitle1">
+              <h3>SUBTITLE 1</h3>
+              <ul class="skill-list">
+                <li>Skill 1</li>
+                <li>Skill 2</li>
+              </ul>
+            </div>
+
+            <div class="subtitle-group" id="subtitle2">
+              <h3>SUBTITLE 2</h3>
+              <ul class="skill-list">
+                <li>Skill 1</li>
+                <li>Skill 2</li>
+              </ul>
+            </div>
+          </section>
+
+          <div class="section-sep">
+            <div class="section-sep-bar">Idiomas</div>
+          </div>
+
+          <section id="languages">
+            <h2>Idiomas</h2>
+            <div class="language-item">
+              <div class="language-header">
+                <strong>Lang 1</strong>
+                <span class="language-level">Level</span>
+              </div>
+              <div class="language-bar">
+                <div class="language-progress" style="width: 65%"></div>
+              </div>
+            </div>
+            <div class="language-item">
+              <div class="language-header">
+                <strong>Lang 2</strong>
+                <span class="language-level">Native</span>
+              </div>
+              <div class="language-bar">
+                <div class="language-progress" style="width: 100%"></div>
+              </div>
+            </div>
+          </section>
+
+          <div class="section-sep">
+            <div class="section-sep-bar">Otros</div>
+          </div>
+
+          <section id="others">
+            <div class="others-contact">
+              <div class="others-contact-item">
+                <span class="others-contact-icon" data-icon="phone"></span>
+                +00 000 00 00 00
+              </div>
+              <a href="mailto:emailaddress@gmail.com" class="others-contact-item">
+                <span class="others-contact-icon" data-icon="email"></span>
+                emailaddress@gmail.com
+              </a>
+              <div class="others-contact-item">
+                <span class="others-contact-icon" data-icon="location"></span>
+                City
+              </div>
+              <a href="https://linkedin.com/in/yourprofile" class="others-contact-item">
+                <span class="others-contact-icon" data-icon="linkedin">in</span>
+                linkedin.com/in/yourprofile
+              </a>
+            </div>
+            <h2>Otros</h2>
+            <p>
+              Hobbie explanation Hobbie explanation Hobbie explanation Hobbie
+              explanation.
+            </p>
+            <div class="others-cards">
+              <div class="others-card big-card">
+                <div class="btn-title">Título</div>
+                <div class="btn-subtitle">One-liner value proposition</div>
+              </div>
+              <div class="others-card small-card">
+                <div class="btn-subtitle-sm">36%</div>
+              </div>
+            </div>
+          </section>
+
+          <div class="funny-fact">
+            <p>Programming languages</p>
+            <div class="lang-icons">
+              <i class="lang-icon devicon-c-original"></i>
+              <i class="lang-icon devicon-javascript-plain"></i>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      document.getElementById("phone-icon").innerHTML = icons.phone;
+      document.getElementById("email-icon").innerHTML = icons.email;
+      document.getElementById("location-icon").innerHTML = icons.location;
+
+      document.querySelectorAll(".others-contact-icon").forEach((el) => {
+        const key = el.dataset.icon;
+        if (icons[key]) el.innerHTML = icons[key];
+      });
+    });
+  </script>
+</body>
+
+</html>
