@@ -1,6 +1,5 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -12,18 +11,6 @@
   <script src="Scripts/ui.js" defer></script>
   <script src="Scripts/drag.js" defer></script>
   <script src="Scripts/transitions.js" defer></script>
-  <style>
-    @page {
-      size: auto;
-      margin: 0;
-      size: 1440px 2000px;
-    }
-
-    body {
-      margin: 0;
-      padding: 0;
-    }
-  </style>
 </head>
 
 <body>
@@ -247,7 +234,6 @@
       document.getElementById("phone-icon").innerHTML = icons.phone;
       document.getElementById("email-icon").innerHTML = icons.email;
       document.getElementById("location-icon").innerHTML = icons.location;
-
       document.querySelectorAll(".others-contact-icon").forEach((el) => {
         const key = el.dataset.icon;
         if (icons[key]) el.innerHTML = icons[key];
