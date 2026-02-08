@@ -1,42 +1,61 @@
 <!DOCTYPE html>
+<!-- Currículum Vitae interactivo con animaciones y tema oscuro -->
 <html lang="en">
 <head>
+  <!-- Meta: codificación y viewport responsivo -->
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>CV</title>
+  
+  <!-- Estilos: CSS principal -->
   <link rel="stylesheet" href="Assets/styles.css" />
-  <script src="Assets/devicons.js"></script>
-  <script src="Assets/icons.js"></script>
-  <script src="Scripts/layout.js" defer></script>
-  <script src="Scripts/ui.js" defer></script>
-  <script src="Scripts/drag.js" defer></script>
-  <script src="Scripts/transitions.js" defer></script>
+  
+  <!-- Scripts: Iconos y layout (sin defer: necesarios antes de render) -->
+  <script src="Assets/devicons.js"></script> <!-- CDN Devicon -->
+  <script src="Assets/icons.js"></script> <!-- Iconos SVG locales -->
+  
+  <!-- Scripts: Defer = ejecutar cuando DOM esté listo -->
+  <script src="Scripts/layout.js" defer></script> <!-- Escala responsiva -->
+  <script src="Scripts/ui.js" defer></script> <!-- Transiciones y clicks -->
+  <script src="Scripts/drag.js" defer></script> <!-- Interactividad arrastre -->
+  <script src="Scripts/transitions.js" defer></script> <!-- Animaciones reveal -->
 </head>
 
 <body>
+  <!-- Barra de navegación fija: tema + links a secciones -->
   <nav class="navbar">
+    <!-- Botón toggle tema oscuro/claro -->
     <button class="theme-toggle" aria-label="Toggle color scheme">
-      <span class="theme-toggle-icon">◐</span>
+      <span class="theme-toggle-icon">◐</span> <!-- Símbolo Luna -->
     </button>
+    <!-- Links con transiciones View Transitions API -->
     <a href="#education" class="nav-link">Formación</a>
     <a href="#practices" class="nav-link">Prácticas</a>
     <a href="#languages" class="nav-link">Idiomas</a>
     <a href="#others" class="nav-link">Contacto</a>
   </nav>
 
+  <!-- Viewport: contenedor con escala responsiva -->
   <div class="viewport">
+    <!-- Stage: canvas de 1414x2000px, escalado por Scripts/layout.js -->
     <div class="stage">
+      <!-- Logo/Avatar: draggable, transformable -->
       <div class="logo-box">
         <div class="avatar" aria-label="Profile picture">
           <img src="pfp.jpg" alt="Profile" />
         </div>
       </div>
-      <div class="btn big"></div>
-      <div class="btn small"></div>
+      <!-- Elementos decorativos: botones vacíos draggables -->
+      <div class="btn big"></div> <!-- Botón grande -->
+      <div class="btn small"></div> <!-- Botón pequeño -->
+      <!-- Panel fondo: color marino, parte del diseño decorativo -->
       <div class="panel"></div>
+      <!-- Contenedor: layout con left + right panels -->
       <div class="container">
+        <!-- Panel izquierdo: info personal + contacto (lado izquierdo del CV) -->
         <aside class="left">
           <div class="left-sections">
+            <!-- Sección: Sobre mí con data-vt para trigger transición de tema -->
             <section id="about-me" class="left-section">
               <h2 data-vt="idiomas">Sobre mi</h2>
               <p>
@@ -46,6 +65,7 @@
                 especiales y programación en general.
               </p>
             </section>
+            <!-- Sección: Datos de contacto -->
             <section id="contact" class="left-section">
               <h2>Contacto</h2>
               <div class="contact-info">
@@ -72,6 +92,7 @@
           </div>
         </aside>
 
+        <!-- Overlay de texto sobre botones decorativos (no interactivo, visual) -->
         <div class="btn-text big">
           <div class="btn-text-inner">
             <div class="btn-title">Título</div>
@@ -85,15 +106,19 @@
           </div>
         </div>
 
+        <!-- Panel derecho: secciones principales (formación, prácticas, idiomas, otros) -->
         <main class="right">
+          <!-- Título clickeable: activar modo fullwidth -->
           <h1 class="clickable-name">NAME</h1>
 
+          <!-- Sección: Formación académica con lenguajes de programación -->
           <section id="education">
+            <!-- Mostrador de lenguajes: iconos Devicon -->
             <div class="edu-langs">
               <p class="edu-langs-label">Programming languages</p>
               <div class="edu-langs-icons">
-                <i class="lang-icon devicon-c-original"></i>
-                <i class="lang-icon devicon-javascript-plain"></i>
+                <i class="lang-icon devicon-c-original"></i> <!-- Icono C -->
+                <i class="lang-icon devicon-javascript-plain"></i> <!-- Icono JS -->
               </div>
             </div>
             <h2>Formación</h2>
@@ -103,10 +128,12 @@
             <div class="meta">Institution · Year · City</div>
           </section>
 
+          <!-- Separador visual entre secciones -->
           <div class="section-sep">
             <div class="section-sep-bar">Prácticas</div>
           </div>
 
+          <!-- Sección: Experiencia profesional / Prácticas -->
           <section id="practices">
             <h2>Prácticas</h2>
 
@@ -152,17 +179,21 @@
             </div>
           </section>
 
+          <!-- Separador visual entre secciones -->
           <div class="section-sep">
             <div class="section-sep-bar">Idiomas</div>
           </div>
 
+          <!-- Sección: Idiomas con barras de progreso animadas -->
           <section id="languages">
             <h2>Idiomas</h2>
+            <!-- Item de idioma: progresa al entrar en viewport -->
             <div class="language-item">
               <div class="language-header">
                 <strong>Lang 1</strong>
                 <span class="language-level">Level</span>
               </div>
+              <!-- Barra de progreso: anima de 0% a width especificado -->
               <div class="language-bar">
                 <div class="language-progress" style="width: 65%"></div>
               </div>
@@ -178,24 +209,31 @@
             </div>
           </section>
 
+          <!-- Separador visual entre secciones -->
           <div class="section-sep">
             <div class="section-sep-bar">Otros</div>
           </div>
 
+          <!-- Sección: Información adicional y contacto -->
           <section id="others">
+            <!-- Grupo de contacto: teléfono, email, ubicación, LinkedIn -->
             <div class="others-contact">
+              <!-- Item contacto: teléfono (icon inyectado desde JS) -->
               <div class="others-contact-item">
                 <span class="others-contact-icon" data-icon="phone"></span>
                 +00 000 00 00 00
               </div>
+              <!-- Item contacto: email (enlace) -->
               <a href="mailto:emailaddress@gmail.com" class="others-contact-item">
                 <span class="others-contact-icon" data-icon="email"></span>
                 emailaddress@gmail.com
               </a>
+              <!-- Item contacto: ubicación -->
               <div class="others-contact-item">
                 <span class="others-contact-icon" data-icon="location"></span>
                 City
               </div>
+              <!-- Item contacto: LinkedIn (enlace) -->
               <a href="https://linkedin.com/in/yourprofile" class="others-contact-item">
                 <span class="others-contact-icon" data-icon="linkedin">in</span>
                 linkedin.com/in/yourprofile
@@ -217,11 +255,12 @@
             </div>
           </section>
 
+          <!-- Sección decorativa: dato interesante con iconos de lenguajes -->
           <div class="funny-fact">
             <p>Programming languages</p>
             <div class="lang-icons">
-              <i class="lang-icon devicon-c-original"></i>
-              <i class="lang-icon devicon-javascript-plain"></i>
+              <i class="lang-icon devicon-c-original"></i> <!-- Icono C -->
+              <i class="lang-icon devicon-javascript-plain"></i> <!-- Icono JS -->
             </div>
           </div>
         </main>
@@ -229,14 +268,18 @@
     </div>
   </div>
 
+  <!-- Script: Inyectar iconos SVG en el DOM desde assets/icons.js -->
   <script>
     document.addEventListener("DOMContentLoaded", () => {
+      // Inyectar iconos predefinidos en elementos con ID específico
       document.getElementById("phone-icon").innerHTML = icons.phone;
       document.getElementById("email-icon").innerHTML = icons.email;
       document.getElementById("location-icon").innerHTML = icons.location;
+      
+      // Inyectar iconos dinámicamente: buscar por data-icon y reemplazar con SVG
       document.querySelectorAll(".others-contact-icon").forEach((el) => {
-        const key = el.dataset.icon;
-        if (icons[key]) el.innerHTML = icons[key];
+        const key = el.dataset.icon; // Obtener clave del atributo data-icon
+        if (icons[key]) el.innerHTML = icons[key]; // Inyectar SVG si existe
       });
     });
   </script>
