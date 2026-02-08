@@ -957,13 +957,7 @@ a.others-contact-item:hover {
 .subtitle-group {
   margin-top: 14px;
   padding: 14px;
-  border: 1px solid var(--w20);
   border-radius: 18px;
-  background: rgb(255 255 255 / 0.06);
-  transition:
-    background-color 0s,
-    border-color 0s,
-    color 0s;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -977,10 +971,11 @@ a.others-contact-item:hover {
   margin: 0;
   width: 100%;
   text-align: center;
+  font-weight: bold;
+  font-size: 20px;
 }
 
 .dark .subtitle-group {
-  background: rgb(0 0 0 / 0.1);
   border-color: var(--navy);
 }
 

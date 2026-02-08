@@ -8,11 +8,10 @@
   <!-- Estilos: CSS principal -->
   <link rel="stylesheet" href="Assets/styles.css" />
   
-  <!-- Scripts: Iconos y layout (sin defer: necesarios antes de render) -->
-  <script src="Assets/devicons.js"></script> <!-- CDN Devicon -->
-  <script src="Assets/icons.js"></script> <!-- Iconos SVG locales -->
+  <script src="Assets/devicons.js"></script> 
+  <script src="Assets/icons.js"></script> 
   
-  <!-- Scripts: Defer = ejecutar cuando DOM esté listo -->
+  <script src="Scripts/cv-data.js" defer></script> <!-- CV data & DOM hydration -->
   <script src="Scripts/layout.js" defer></script> <!-- Escala responsiva -->
   <script src="Scripts/ui.js" defer></script> <!-- Transiciones y clicks -->
   <script src="Scripts/drag.js" defer></script> <!-- Interactividad arrastre -->
@@ -20,12 +19,10 @@
 </head>
 
 <body>
-  <!-- Barra de navegación fija: tema + links a secciones -->
   <nav class="navbar">
     <button class="theme-toggle" aria-label="Toggle color scheme">
-      <span class="theme-toggle-icon">◐</span> <!-- Símbolo Luna -->
+      <span class="theme-toggle-icon">◐</span>
     </button>
-    <!-- Links con transiciones View Transitions API -->
     <a href="#education" class="nav-link">Formación</a>
     <a href="#practices" class="nav-link">Prácticas</a>
     <a href="#languages" class="nav-link">Idiomas</a>
@@ -37,158 +34,114 @@
     <div class="stage">
       <div class="logo-box">
         <div class="avatar" aria-label="Profile picture">
-          <img src="pfp.jpg" alt="Profile" />
+          <img src="Assets/pfp.webp" alt="Profile" />
         </div>
       </div>
-      <!-- Elementos decorativos: botones vacíos draggables -->
-      <div class="btn big"></div> <!-- Botón grande -->
-      <div class="btn small"></div> <!-- Botón pequeño -->
-      <!-- Panel fondo: color marino, parte del diseño decorativo -->
+      <div class="btn big"></div>
+      <div class="btn small"></div>
       <div class="panel"></div>
-      <!-- Contenedor: layout con left + right panels -->
       <div class="container">
-        <!-- Panel izquierdo: info personal + contacto (lado izquierdo del CV) -->
         <aside class="left">
           <div class="left-sections">
-            <!-- Sección: Sobre mí con data-vt para trigger transición de tema -->
             <section id="about-me" class="left-section">
-              <h2 data-vt="idiomas">Sobre mi</h2>
-              <p>
-                Soy Hernán, tengo 21 años y me considero bastante entusiasta colaborador y creativo.
-                Disfruto trabajando en equipo y deseo continuar aprendiendo sobre los temas que más despiertan mi
-                curiosidad como la IA, seguridad informática, accesibilidad del software a usuarios con capacidades
-                especiales y programación en general.
-              </p>
+              <h2 data-vt="idiomas"></h2>
+              <p></p>
             </section>
-            <!-- Sección: Datos de contacto -->
             <section id="contact" class="left-section">
-              <h2>Contacto</h2>
+              <h2></h2>
               <div class="contact-info">
                 <p id="phone-item">
                   <span id="phone-icon"></span>
-                  +34 644 03 23 30
                 </p>
-                <a href="mailto:emailaddress@gmail.com" id="email-link"><span id="email-icon"></span>
-                  hernan@gmail.com</a>
+                <a href="mailto:" id="email-link"><span id="email-icon"></span></a>
                 <p id="location-item">
                   <span id="location-icon"></span>
-                  Sevilla, España
                 </p>
               </div>
             </section>
-
             <section id="linkedin" class="left-section">
-              <h2>LinkedIn</h2>
+              <h2></h2>
               <div class="contact-info">
-                <a href="https://linkedin.com/in/hernanadaits"><span class="icon">in</span>
-                  linkedin.com/in/hernanadaits</a>
+                <a href=""><span class="icon">in</span></a>
               </div>
             </section>
           </div>
         </aside>
 
-        <!-- Overlay de texto sobre botones decorativos (no interactivo, visual) -->
         <div class="btn-text big">
           <div class="btn-text-inner">
-            <div class="btn-title">Título</div>
-            <div class="btn-subtitle">One-liner value proposition</div>
+            <div class="btn-title"></div>
+            <div class="btn-subtitle"></div>
           </div>
         </div>
-
         <div class="btn-text small">
           <div class="btn-text-inner">
-            <div class="btn-subtitle-sm">36%</div>
+            <div class="btn-subtitle-sm"></div>
           </div>
         </div>
-
-        <!-- Panel derecho: secciones principales (formación, prácticas, idiomas, otros) -->
         <main class="right">
-          <!-- Título clickeable: activar modo fullwidth -->
-          <h1 class="clickable-name">NAME</h1>
-
-          <!-- Sección: Formación académica con lenguajes de programación -->
+          <h1 class="clickable-name"></h1>
           <section id="education">
-            <!-- Mostrador de lenguajes: iconos Devicon -->
             <div class="edu-langs">
-              <p class="edu-langs-label">Programming languages</p>
-              <div class="edu-langs-icons">
-                <i class="lang-icon devicon-c-original"></i>
-                <i class="lang-icon devicon-javascript-plain"></i> 
-              </div>
+              <p class="edu-langs-label"></p>
+              <div class="edu-langs-icons"></div>
             </div>
-            <h2>Formación</h2>
-            <p>Academic title</p>
-            <div class="meta">Institution · Year · City</div>
-            <p>Academic title</p>
-            <div class="meta">Institution · Year · City</div>
+            <h2></h2>
+            <p>Técnico superior desarrollo de aplicaciones web (2025 - )</p>
+            <div class="meta">ADAITS · 2025 · Sevilla</div>
           </section>
 
           <!-- Separador visual entre secciones -->
           <div class="section-sep">
-            <div class="section-sep-bar">Prácticas</div>
+            <div class="section-sep-bar"></div>
           </div>
 
           <!-- Sección: Experiencia profesional / Prácticas -->
           <section id="practices">
             <h2>Formacion</h2>
-
-            <div class="subtitle-group">
-              <p>SUBTITLE</p>
-              <p><strong>Skills acquired</strong></p>
-            </div>
-
             <div class="subtitle-group" id="subtitle4">
-              <h3>SUBTITLE 4</h3>
+              <h3>Skills</h3>
               <ul class="skill-list">
-                <li>Skill 1</li>
-                <li>Skill</li>
-                <li>Skill</li>
-                <li>Skill</li>
-                <li>Skill</li>
-                <li>Skill</li>
-                <li>Skill</li>
-                <li>Skill</li>
-                <li>Skill</li>
+                <li>Usuario avanzado de SOs Windows (10, 11 y Server 2022)</li>
+                <li>Usuario intermedio en SOs Linux (Ubuntu 22.10)</li>
+                <li>Gestion y visualizado de repositorios de software usando git y Github</li>
+                <li>Gestión de firewalls en Windows y ufw</li>
+                <li>Nivel basico en desarrollo de aplicaciones con Java</li>
               </ul>
             </div>
-
-            <div class="subtitle-group" id="subtitle3">
-              <h3>SUBTITLE 3</h3>
-              <p>Short description of what you did and what you achieved.</p>
-            </div>
-
-            <div class="subtitle-group" id="subtitle1">
-              <h3>SUBTITLE 1</h3>
+	<div class="subtitle-group" id="subtitle1">
+              <h3>Técnico superior desarrollo de aplicaciones web ADA-ITS (2024 - )</h3>
               <ul class="skill-list">
-                <li>Skill 1</li>
-                <li>Skill 2</li>
+                <li>Creacion de  proyecto intermodular con frontend y backend de gestion de eventos.</li>
+                <li>Diseño de UI y UX con Figma</li>
+				<li>Administracion de BBDD de MongoDB</li>
+				<li>Despliegue de paginas web en Vercel y Render</li>
               </ul>
             </div>
-
-            <div class="subtitle-group" id="subtitle2">
-              <h3>SUBTITLE 2</h3>
+            
+			<div class="subtitle-group" id="subtitle2">
+              <h3>PROGRAMACIóN EN 42 MALAGA (2024 - )</h3>
               <ul class="skill-list">
-                <li>Skill 1</li>
-                <li>Skill 2</li>
+                <li>Habilidades de problem solving con ejercicios de programación en C.</li>
+                <li>Aprendizaje basado en proyectos y deadlines.</li>
               </ul>
+            </div>
+			
+			<div class="subtitle-group" id="subtitle3">
+              <h3>CURSO WEB DEVELOPMENT FRONT-END -  GENERAL ASSEMBLY fundación adecco (2022)</h3>
+              <p>Creación de páginas web dinámicas utilizando el framework React + styling con CSS (SASS)</p>
             </div>
           </section>
-
-          <!-- Separador visual entre secciones -->
           <div class="section-sep">
-            <div class="section-sep-bar">Idiomas</div>
+            <div class="section-sep-bar"></div>
           </div>
-
-          <!-- Sección: Idiomas con barras de progreso animadas -->
           <section id="languages">
-            <h2>Idiomas</h2>
-            <!-- Item de idioma: progresa al entrar en viewport -->
+            <h2></h2>
             <div class="language-item">
               <div class="language-header">
                 <strong>English</strong>
                 <span class="language-level">C1 Level</span>
               </div>
-              <!-- Barra de progreso: Se anima de 0% a width especificado -->
               <div class="language-bar">
                 <div class="language-progress" style="width: 85%"></div>
               </div>
@@ -203,81 +156,44 @@
               </div>
             </div>
           </section>
-
-          <!-- Separador visual entre secciones -->
           <div class="section-sep">
-            <div class="section-sep-bar">Otros</div>
+            <div class="section-sep-bar"></div>
           </div>
 
-          <!-- Sección: Información adicional y contacto -->
           <section id="others">
-            <!-- Grupo de contacto: teléfono, email, ubicación, LinkedIn -->
             <div class="others-contact">
-              <!-- Item contacto: teléfono (icon inyectado desde JS) -->
               <div class="others-contact-item">
                 <span class="others-contact-icon" data-icon="phone"></span>
-                +00 000 00 00 00
               </div>
-              <!-- Item contacto: email (enlace) -->
-              <a href="mailto:emailaddress@gmail.com" class="others-contact-item">
+              <a href="mailto:" class="others-contact-item">
                 <span class="others-contact-icon" data-icon="email"></span>
-                emailaddress@gmail.com
               </a>
-              <!-- Item contacto: ubicación -->
               <div class="others-contact-item">
                 <span class="others-contact-icon" data-icon="location"></span>
-                City
               </div>
-              <!-- Item contacto: LinkedIn (enlace) -->
-              <a href="https://linkedin.com/in/yourprofile" class="others-contact-item">
+              <a href="" class="others-contact-item">
                 <span class="others-contact-icon" data-icon="linkedin">in</span>
-                linkedin.com/in/yourprofile
               </a>
             </div>
-            <h2>Otros</h2>
-            <p>
-              Hobbie explanation Hobbie explanation Hobbie explanation Hobbie
-              explanation.
-            </p>
+            <h2></h2>
+            <p></p>
             <div class="others-cards">
               <div class="others-card big-card">
-                <div class="btn-title">Título</div>
-                <div class="btn-subtitle">One-liner value proposition</div>
+                <div class="btn-title"></div>
+                <div class="btn-subtitle"></div>
               </div>
               <div class="others-card small-card">
-                <div class="btn-subtitle-sm">36%</div>
+                <div class="btn-subtitle-sm"></div>
               </div>
             </div>
           </section>
-
-          <!-- Sección decorativa: dato interesante con iconos de lenguajes -->
           <div class="funny-fact">
-            <p>Programming languages</p>
-            <div class="lang-icons">
-              <i class="lang-icon devicon-c-original"></i> <!-- Icono C -->
-              <i class="lang-icon devicon-javascript-plain"></i> <!-- Icono JS -->
-            </div>
+            <p></p>
+            <div class="lang-icons"></div>
           </div>
         </main>
       </div>
     </div>
   </div>
-
-  <!-- Inyectar iconos SVG en el DOM desde assets/icons.js -->
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      // Inyectar iconos predefinidos en elementos con ID específico
-      document.getElementById("phone-icon").innerHTML = icons.phone;
-      document.getElementById("email-icon").innerHTML = icons.email;
-      document.getElementById("location-icon").innerHTML = icons.location;
-      
-      // Inyectar iconos dinámicamente: buscar por data-icon y reemplazar con SVG
-      document.querySelectorAll(".others-contact-icon").forEach((el) => {
-        const key = el.dataset.icon; // Obtener clave del atributo data-icon
-        if (icons[key]) el.innerHTML = icons[key]; // Inyectar SVG si existe
-      });
-    });
-  </script>
 </body>
-
 </html>
