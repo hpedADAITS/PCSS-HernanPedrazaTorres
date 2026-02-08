@@ -901,9 +901,6 @@ a.others-contact-item:hover {
   background: var(--white) !important;
 }
 
-.language-bar:hover .language-progress {
-  background: navy !important;
-}
 
 .language-progress {
   height: 100%;
@@ -917,7 +914,7 @@ a.others-contact-item:hover {
 }
 
 .dark .language-bar {
-  background: rgb(0 0 0 / 0.2);
+  background: rgba(0, 0, 0, 0.050);
 }
 
 .dark .language-progress {
