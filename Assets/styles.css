@@ -101,7 +101,7 @@ body.dark {
 .stage {
   position: relative;
   width: 1414px;
-  height: 2000px;
+  min-height: 2000px;
   margin: 0 auto;
   transform-origin: top center;
   transform: scale(var(--s, 1));
@@ -902,7 +902,7 @@ a.others-contact-item:hover {
 }
 
 .language-bar:hover .language-progress {
-  background: rgb(255 255 255 / 0.15) !important;
+  background: navy !important;
 }
 
 .language-progress {

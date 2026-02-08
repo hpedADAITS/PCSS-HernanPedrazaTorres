@@ -10,7 +10,6 @@
   const viewport = document.querySelector('.viewport');
   const stage = document.querySelector('.stage');
   
-  // Salir si no existen elementos
   if (!viewport || !stage) return;
 
   // Función principal: recalcular escala según ancho de viewport
@@ -19,22 +18,20 @@
     if (mq.matches) {
       stage.style.setProperty('--s', '1');
       viewport.style.height = 'auto';
+      stage.style.height = 'auto';
       return;
     }
-    
-    // Desktop: calcular escala manteniendo proporción (max 100%)
     const w = viewport.clientWidth;
-    const s = Math.min(1, w / DESIGN_W); // Scale factor
+    const s = Math.min(1, w / DESIGN_W);
     stage.style.setProperty('--s', String(s));
-    
-    // Altura del viewport = altura de diseño * escala
-    viewport.style.height = DESIGN_H * s + 'px';
+    const contentH = stage.scrollHeight;
+    viewport.style.height = contentH * s + 'px';
   }
 
-  // Listeners para recalcular en cambios de breakpoint y resize
+  const ro = new ResizeObserver(layout);
+  ro.observe(stage);
+
   mq.addEventListener('change', layout);
-  addEventListener('resize', layout, { passive: true }); // passive: no prevenir scroll
-  
-  // Calcular layout inicial
+  addEventListener('resize', layout, { passive: true });
   layout();
 })();
